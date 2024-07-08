@@ -5,7 +5,7 @@ domains. Specifically, the purpose is to apply Machine Learning techniques in or
 predict which class represents each domain in the most optimal way. This task can be
 classified in the problem categories of text classification combined with node classification,
 since the data not only contain textual representation of the websites but we also obtain a
-graph of the domains, based on the links between them.
+graph of the domains, based on the links between them.<br><br>
 Data:
 The data provided for text classification consist of Greek domains. It consists of four main
 directories:
@@ -20,7 +20,7 @@ represent the theme of the domain.
 • Test.txt: This file contains the domain names that will constitute the test set of the
 classification task. Similarly, each of these domain names belongs to one of the 9
 possible classes. There are the domains which the models will be evaluated on, on
-Kaggle.<br>
+Kaggle.<br><br>
 Please read the file Report.pdf to understand the project and our proposed solution to it.
 
 </body>
