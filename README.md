@@ -9,15 +9,15 @@ graph of the domains, based on the links between them.
 2. Data
 The data provided for text classification consist of Greek domains. It consists of four main
 directories:
-• Domains.zip: This file contains the textual content of the domains that are included
+<br> • Domains.zip: This file contains the textual content of the domains that are included
 in our project.
-• Edgelist.txt: This file contains a large part of the Greek web graph stored as an edge-
+<br> • Edgelist.txt: This file contains a large part of the Greek web graph stored as an edge-
 list. The nodes represent the domain names and edges represent the hyperlinks that
 can be found in the domain.
-• Train.txt: This file contains the domain names that will constitute the train set of the
+<br> • Train.txt: This file contains the domain names that will constitute the train set of the
 classification task. These domains are already classified in one of the 9 classes, which
 represent the theme of the domain.
-• Test.txt: This file contains the domain names that will constitute the test set of the
+<br> • Test.txt: This file contains the domain names that will constitute the test set of the
 classification task. Similarly, each of these domain names belongs to one of the 9
 possible classes. There are the domains which the models will be evaluated on, on
 Kaggle.<br><br>
