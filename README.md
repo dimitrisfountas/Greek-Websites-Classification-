@@ -20,5 +20,5 @@ represent the theme of the domain.
 • Test.txt: This file contains the domain names that will constitute the test set of the
 classification task. Similarly, each of these domain names belongs to one of the 9
 possible classes. There are the domains which the models will be evaluated on, on
-Kaggle.
+Kaggle.<br>
 Please read the file Report.pdf to understand the project and our proposed solution to it.
