@@ -21,3 +21,4 @@ represent the theme of the domain.
 classification task. Similarly, each of these domain names belongs to one of the 9
 possible classes. There are the domains which the models will be evaluated on, on
 Kaggle.
+Please read the file Report.pdf to understand the project and our proposed solution to it.
