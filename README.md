@@ -1,4 +1,4 @@
-# Greek-Websites-Classification-
+# Greek Websites Classification.
 1. Project Scope
 The goal of the project is to perform classification on a collection of data that represent web
 domains. Specifically, the purpose is to apply Machine Learning techniques in order to
