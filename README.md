@@ -17,26 +17,28 @@
 
 
 ## 1. Project Scope 
-  The goal of the project is to perform classification on a collection of data that represent web 
-domains. Specifically, the purpose is to apply Machine Learning techniques in order to 
-predict which class represents each domain in the most optimal way. This task can be 
-classified in the problem categories of text classification combined with node classification, 
-since the data not only contain textual representation of the websites but we also obtain a 
-graph of the domains, based on the links between them.  
+The goal of the project is to perform **Classification** on a collection of data that represent **Web Domains**.  
+
+
+Specifically, the purpose is to apply **Machine Learning Techniques** in order to **Predict** which class represents each **Domain** most optimaly.  
+
+
+This task can be classified in the problem categories of **Text Classification** combined with **Node Classification**,  
+since the data not only contain **Textual Representation** of the websites but we also obtain a **Graph** of the domains based on the links between them, that contains the **Spacial Information**  of our dataset.  
 
 
 ## 2. Data 
   The data provided for text classification consist of Greek domains. It consists of four main 
 directories: 
-• Domains.zip: This file contains the textual content of the domains that are included 
+- **Domains.zip**: This file contains the textual content of the domains that are included 
 in our project.  
-• Edgelist.txt: This file contains a large part of the Greek web graph stored as an edge
+- **Edgelist.txt**: This file contains a large part of the Greek web graph stored as an edge
 list. The nodes represent the domain names and edges represent the hyperlinks that 
 can be found in the domain. 
-• Train.txt: This file contains the domain names that will constitute the train set of the 
+- **Train.txt**: This file contains the domain names that will constitute the train set of the 
 classification task. These domains are already classified in one of the 9 classes, which 
 represent the theme of the domain.  
-• Test.txt: This file contains the domain names that will constitute the test set of the 
+- **Test.txt**: This file contains the domain names that will constitute the test set of the 
 classification task. Similarly, each of these domain names belongs to one of the 9 
 possible classes. There are the domains which the models will be evaluated on, on 
 Kaggle. 
@@ -71,31 +73,25 @@ All the steps above are performed on the train and test domains, separately.
 
 ## 2.2. Data Exploration
 
-Following on our analysis, we perform Data exploration to better understand the available  
-data. To do so, we combine the information from the textual context of the domains and the  
-information from the graph and the connectivity of the nodes.  
-Starting on our analysis, we study the class distribution of the train dataset. As we can see  
-on the figure below, the classes are highly imbalanced. The Class 3 seems to have the  
-highest percentage of the train samples, while the Classes 0, 6 and 7 have the lowest  
-percentages.
+Following on our analysis, we perform Data exploration to better understand the available data.  
+To do so, we combine the information from the textual context of the domains and the  information from the graph and the connectivity of the nodes.  
 
-![Distributions Image](path/to/distributions_image.png)
 
-In order to gain a better understanding on the classes and what each one of them  
-represents, we analyze more the domains in each class. As we can see below, we print  
-indicatively 10 domains of each class.
+Starting on our analysis, we study the class distribution of the train dataset.  As we can see on the figure below, the classes are highly imbalanced.  
+The **Class 3** seems to have the **highest percentage** of the train samples, while the **Classes 0, 6 and 7** have the **lowest percentages**.
 
-```text
-10 DOMAINS
-```
+![Distributions Image](images/class_dist.png)
 
-We can already detect a theme for each class, but we also print the top words that appear  
-most frequently in each class and have relatively large length, over 10 letters. In the below  
-image we can see indicatively some of them.
+In order to gain a better understanding on the classes and what each one of them represents, we analyze more the domains in each class.  
+As we can see below, we print indicatively **10 domains** of each **class**.
 
-```text
-10 WORDS
-```
+![indicative_domains Image](images/indicative_domains.png)
+
+We can already detect a theme for each class, but we also print the **top words** that appear  
+most frequently in each class and have relatively large length, over 10 letters. 
+In the below image we can see indicatively some of them.
+
+![indicative_domains Image](images/indicative_words.png)
 
 Following, we focus more on the graph information in our data. First of all, the graph of all  
 the domains consists of 65,208 nodes and 1,642,073 edges.
