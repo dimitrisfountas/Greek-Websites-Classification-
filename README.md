@@ -324,13 +324,13 @@ of 58% and a macro f1-score of 59%.
 
 <br><br>
 <p align="center">
-  <img src="images/benchmark_class_report.png" width="50%" alt="BENCHMARK CLASS REPORT"><br>
+  <img src="images/benchmark_class_report.png" width="40%" alt="BENCHMARK CLASS REPORT"><br>
 </p>
 <br><br>
 
 <br><br>
 <p align="center">
-  <img src="images/benchmark_conf_matrix.png" width="50%" alt="BENCHMARK CONF MATRIX"><br>
+  <img src="images/benchmark_conf_matrix.png" width="40%" alt="BENCHMARK CONF MATRIX"><br>
 </p>
 <br><br>
 
@@ -350,7 +350,7 @@ each stage. A high – level representation can be seen below:
 
 <br><br>
 <p align="center">
-  <img src="images/final_model_architecture.png" width="50%" alt="final_model_architecture"><br>
+  <img src="images/final_model_architecture.png" width="30%" alt="final_model_architecture"><br>
 </p>
 <br><br>
 
@@ -366,7 +366,7 @@ framework, where we define the max trials as 50:
 
 <br><br>
 <p align="center">
-  <img src="images/mlp_parameters.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/mlp_parameters.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -460,7 +460,7 @@ Using the validation dataset, we evaluate the best MLP model produced, which lea
 
 <br><br>
 <p align="center">
-  <img src="images/model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/model1_accuracy.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -479,7 +479,7 @@ the alternative model.
 
 <br><br>
 <p align="center">
-  <img src="images/graph-based_mlp_model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/graph-based_mlp_model1_accuracy.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -490,7 +490,7 @@ however it remains worse than the MLP model 2.
 
 <br><br>
 <p align="center">
-  <img src="images/logreg-based_mlp_model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/logreg-based_mlp_model1_accuracy.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -526,7 +526,7 @@ We train the model for 150 epochs. The hyper-parameters used to train the model 
 
 <br><br>
 <p align="center">
-  <img src="images/parameters_table_gcn.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/parameters_table_gcn.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -545,7 +545,7 @@ results. As we can see, this model achieves accuracy at 71% and a f1-score of 68
 
 <br><br>
 <p align="center">
-  <img src="images/gcn_accuracy_report.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/gcn_accuracy_report.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
