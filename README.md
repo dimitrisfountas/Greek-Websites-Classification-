@@ -116,10 +116,10 @@ After computing this information, we study the nodes with the highest in-degree,
 degree and average neighbors’ degree per Class.
 
 
-![in degrees Image](images/in-degree.png)
+![in degrees Image](images/in-degrees.png)
 
 
-![out degrees Image](images/out-degree.png)
+![out degrees Image](images/out-degrees.png)
 
 
 ![avg degrees Image](images/avg-degree.png)
