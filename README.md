@@ -118,16 +118,17 @@ degree and average neighbors’ degree per Class.
 
 
 <p align="center">
-  <img src="images/in-degrees.png" width="300" alt="The Domains Class with the Highest in-degrees.">
+  <img src="images/in-degrees.png" width="40%" alt="The Domains Class with the Highest in-degrees.">
 </p>
 
 <p align="center">
-  <img src="images/out-degrees.png" width="300" alt="The Domains Class with the Highest out-degrees.">
+  <img src="images/out-degrees.png" width="40%" alt="The Domains Class with the Highest out-degrees.">
 </p>
 
-<div style="text-align: center;">
-  <img src="images/avg-degrees.png" width="70%" />
-</div>
+<p align="center">
+  <img src="images/avg-degrees.png" width="40%" alt="The Domains Class with the Highest out-degrees.">
+</p>
+
 
 As we can see from the above, and especially from in-degrees and out-degrees results, there
 seem to be a clear theme for each Class. If we combine all of the above insights we can
