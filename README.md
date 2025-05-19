@@ -116,13 +116,14 @@ After computing this information, we study the nodes with the highest in-degree,
 degree and average neighbors’ degree per Class.
 
 
-<div style="text-align: center;">
-  <img src="images/in-degrees.png" width="70%" />
-</div>
 
-<div style="text-align: center;">
-  <img src="images/out-degrees.png" width="70%" />
-</div>
+<p align="center">
+  <img src="images/in-degrees.png" width="300" alt="The Domains Class with the Highest in-degrees.">
+</p>
+
+<p align="center">
+  <img src="images/out-degrees.png" width="300" alt="The Domains Class with the Highest out-degrees.">
+</p>
 
 <div style="text-align: center;">
   <img src="images/avg-degrees.png" width="70%" />
