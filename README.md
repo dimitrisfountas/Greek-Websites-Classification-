@@ -116,18 +116,27 @@ After computing this information, we study the nodes with the highest in-degree,
 degree and average neighbors’ degree per Class.
 
 
-
+<br><br>
 <p align="center">
-  <img src="images/in-degrees.png" width="40%" alt="The Domains Class with the Highest in-degrees.">
+  <img src="images/in-degrees.png" width="35%" alt="The Domains Class with the Highest in-degrees."><br>
+  <span style="color: lightblue;">The Domains Class with the Highest In-Degrees</span>
 </p>
 
-<p align="center">
-  <img src="images/out-degrees.png" width="40%" alt="The Domains Class with the Highest out-degrees.">
-</p>
+<br><br>
 
 <p align="center">
-  <img src="images/avg-degrees.png" width="40%" alt="The Domains Class with the Highest out-degrees.">
+  <img src="images/out-degrees.png" width="35%" alt="The Domains Class with the Highest out-degrees."><br>
+  <span style="color: lightblue;">The Domains Class with the Highest Out-Degrees</span>
 </p>
+
+<br><br>
+
+<p align="center">
+  <img src="images/avg-degrees.png" width="35%" alt="The Domains Class with the Highest average degrees."><br>
+  <span style="color: lightblue;">The Domains Class with the Highest Average Degrees</span>
+</p>
+
+
 
 
 As we can see from the above, and especially from in-degrees and out-degrees results, there
