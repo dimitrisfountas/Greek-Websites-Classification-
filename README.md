@@ -80,18 +80,30 @@ To do so, we combine the information from the textual context of the domains and
 Starting on our analysis, we study the class distribution of the train dataset.  As we can see on the figure below, the classes are highly imbalanced.  
 The **Class 3** seems to have the **highest percentage** of the train samples, while the **Classes 0, 6 and 7** have the **lowest percentages**.
 
+<br><br>
+
 ![Distributions Image](images/class_dist.png)
+
+<br><br>
 
 In order to gain a better understanding on the classes and what each one of them represents, we analyze more the domains in each class.  
 As we can see below, we print indicatively **10 domains** of each **class**.
 
+<br><br>
+
 ![indicative_domains Image](images/indicative_domains.png)
+
+<br><br>
 
 We can already detect a theme for each class, but we also print the **top words** that appear  
 most frequently in each class and have relatively large length, over 10 letters. 
 In the below image we can see indicatively some of them.
 
+<br><br>
+
 ![indicative_words Image](images/indicative_words.png)
+
+<br><br>
 
 Following, we focus more on the graph information in our data. First of all, the graph of all  
 the domains consists of 65,208 nodes and 1,642,073 edges.
@@ -119,31 +131,37 @@ degree and average neighbors’ degree per Class.
 <br><br>
 <p align="center">
   <img src="images/in-degrees.png" width="35%" alt="The Domains Class with the Highest in-degrees."><br>
-  <span style="color: lightblue;">The Domains Class with the Highest In-Degrees</span>
+  <span style="color: lightblue;">Image 4: The Domains Class with the Highest In-Degrees</span>
 </p>
 
 <br><br>
 
 <p align="center">
   <img src="images/out-degrees.png" width="35%" alt="The Domains Class with the Highest out-degrees."><br>
-  <span style="color: lightblue;">The Domains Class with the Highest Out-Degrees</span>
+  <span style="color: lightblue;">Image 5: The Domains Class with the Highest Out-Degrees</span>
 </p>
 
 <br><br>
 
 <p align="center">
   <img src="images/avg-degrees.png" width="35%" alt="The Domains Class with the Highest average degrees."><br>
-  <span style="color: lightblue;">The Domains Class with the Highest Average Degrees</span>
+  <span style="color: lightblue;">Image 6: The Domains Class with the Highest Average Degrees</span>
 </p>
 
-
+<br><br>
 
 
 As we can see from the above, and especially from in-degrees and out-degrees results, there
 seem to be a clear theme for each Class. If we combine all of the above insights we can
 conclude the following:
 
-Image Classes Description.
+<br><br>
+<p align="center">
+  <img src="images/class_desc_table.png" width="70%" alt="Class Description"><br>
+</p>
+
+<br><br>
+
 
 
 Next in our analysis, we study the communities that are formed on the train domains in each of the 9
@@ -151,7 +169,12 @@ Classes. To do so we utilize the Louvain method, which can provide valuable insi
 structural organization and cohesiveness of the nodes within each class and we calculate the number
 of communities per Class.
 
-Image 7 : Number of Communities in the train domains, per Class
+<br><br>
+<p align="center">
+  <img src="images/communities_num.png" width="50%" alt="Communities"><br>
+</p>
+
+<br><br>
 
 The number of communities detected in each class indicates how the nodes within each
 class are grouped based on their connections. In our data, the numbers range from 7 to 11
@@ -173,7 +196,12 @@ remarks on that:
 Finally, before we continue with the rest components of the model development, we print some
 informative statistics on the train and test dataset, but also per each of the Classes.
 
-Image 8 : Statistics on the textual representation of the domains
+<br><br>
+<p align="center">
+  <img src="images/domain_stats.png" width="50%" alt="domain_stats"><br>
+</p>
+
+<br><br>
 
 The vocabulary size is quite large, reflecting a rich and diverse set of words used across the
 textual content of the domains. However, there are 30,428 out-of-vocabulary (OOV) words
@@ -294,7 +322,17 @@ On our first trial, we utilized as input to the model only the text embeddings a
 can be seen below. As expected, the performance is not optimal as it achieves an accuracy
 of 58% and a macro f1-score of 59%.
 
-IMAGE BENCHMARK
+<br><br>
+<p align="center">
+  <img src="images/benchmark_class_report.png" width="50%" alt="BENCHMARK CLASS REPORT"><br>
+</p>
+<br><br>
+
+<br><br>
+<p align="center">
+  <img src="images/benchmark_conf_matrix.png" width="50%" alt="BENCHMARK CONF MATRIX"><br>
+</p>
+<br><br>
 
 We should also note that we examined the Logistic Regression performance using SVD on
 the text representations, to reduce the dimensionality of the text features before feeding them 
@@ -310,7 +348,11 @@ Specifically, this architecture sequentially utilizes three different models. Th
 model serves as the input to the subsequent model, with additional features incorporated at
 each stage. A high – level representation can be seen below:
 
-image final model
+<br><br>
+<p align="center">
+  <img src="images/final_model_architecture.png" width="50%" alt="final_model_architecture"><br>
+</p>
+<br><br>
 
 
 ### Model 1: MLP using text embeddings
@@ -320,14 +362,24 @@ the data into 90% train and 10% validation sets, in order to evaluate the genera
 power of each model. Then, we define the search space to be used in the Optuna
 framework, where we define the max trials as 50:
 
-IMAGE MLP PARAMETERS
+
+
+<br><br>
+<p align="center">
+  <img src="images/mlp_parameters.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 For the training process, we also utilize Early Stopping in order to avoid the overfitting of the
 model, using as patience 5 epochs and then we train the model for 100 epochs. The model
 with the best hyper-parameters is the following, which achieves a train loss of 0.8964 and a
 validation loss of 1.0685:
 
-IMAGE
+<br><br>
+<p align="center">
+  <img src="images/BIG_PIC.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 
 From the above plots we can see that after around 20 epochs, the training and validation
@@ -341,39 +393,79 @@ Using the validation dataset, we evaluate the trained MLP model, which leads to 
 following results. As we can see, this model already outperforms the Logistic Regression
 used as baseline, which was expected.
 
-IMAGE CONF MATRIX
+<br><br>
+<p align="center">
+  <img src="images/conf_matrix_model1.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
+
+<br><br>
+<p align="center">
+  <img src="images/classification_report_model_1.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 ### Model 2: MLP using the output of Model 1 combined with  representations
 After training the best-performing MLP on the first step, we obtain the probability
-distribution it produces for each input, which has a size of (9,) corresponding to our 9
-classes. This probability distribution reflects the confidence of this model in assigning each
-input to the classes. In order to further enhance our model's performance, we introduce the
-additional -based features.
-Specifically, we create the  representation as described in the respective section
-above. This representation consists of feature vectors of size 128, derived from Word2Vec
-application on random walks, along with the three-node metrics: in-degree, out-degree, and
-average neighbors' degree and the (1,) vector that indicates the partition. These combined
-vectors, totaling a size of 132 (128 + 3+1), capture the structural properties and connectivity
-information of the nodes within the .
-This combined input for the second MLP, is thus formed by concatenating the probability
-distribution from Model 1 with the  representation vectors. The purpose of using the
-probability distribution from Model 1 as an input to Model 2 is twofold. Firstly, it enables
-Model 2 to build upon the initial classification, leveraging the probabilistic information that
-reflects the initial model's confidence in class assignments. Secondly, by integrating this
-probabilistic data with -based features, Model 2 can refine its understanding of the
-input data, potentially capturing more complex relationships and dependencies that the
-initial model might have missed.
-Following, using the approach described earlier, we scale the input vectors since the
-features are on a different scale, where the probabilities range from 0 to 1 and the 
-representation features are much larger numbers. We tried both no scaled and scaled input
-data, and we saw that scaling helped in the convergence of algorithms and resulted in better
-results (val loss and accuracy).
-Again, as of Model 1, we define the same search space for the Optuna framework to utilize
-and find the best hyper – parameters, by performing 50 trials at maximum and we utilize
-Early Stopping. The model with the best hyper-parameters is the following, which achieves a
-train loss of 0.2842 and a validation loss 0f 0.7445:
-IMAGES
+distribution it produces for each input, which has a size of **(9,)** corresponding to our 9
+classes. 
 
+
+This probability distribution reflects the confidence of this model in assigning each
+input to the classes. In order to further enhance our model's performance, we introduce the
+additional - based features.  
+
+
+Specifically, we create the  representation as described in the respective section
+above. This representation consists of feature vectors of size 128, derived from **Word2Vec**
+application on **random walks**, along with the three-node metrics: in-degree, out-degree, and
+average neighbors' degree and the **(1,)** vector that indicates the partition. These combined
+vectors, totaling a size of 132 (128 + 3+1), capture the structural properties and connectivity
+information of the nodes within the.  
+
+
+This combined input for the second MLP, is thus formed by concatenating the probability
+distribution from **Model 1** with the  representation vectors. The purpose of using the
+probability distribution from **Model 1** as an input to **Model** 2 is twofold.  
+
+
+Firstly, it enables **Model 2** to build upon the initial classification, leveraging the probabilistic information that
+reflects the initial model's confidence in class assignments.  
+Secondly, by integrating this probabilistic data with graph-based features, **Model 2** can refine its understanding of the
+input data, potentially capturing more complex relationships and dependencies that the initial model might have missed.  
+Following, using the approach described earlier, we scale the input vectors since the features are on a different scale, where the probabilities range from 0 to 1 and the representation features are much larger numbers.
+
+
+We tried both no scaled and scaled input data, and we saw that scaling helped in the convergence of algorithms and resulted in betterresults (val loss and accuracy).
+Again, as of **Model 1**, we define the same search space for the **Optuna** framework to utilize
+and find the best hyper – parameters, by performing 50 trials at maximum and we utilize
+**Early Stopping**. The model with the best hyper-parameters is the following, which achieves a
+train loss of 0.2842 and a validation loss 0f 0.7445:
+
+
+<br><br>
+<p align="center">
+  <img src="images/BIG_PIC_model2.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
+
+From the plots we can see that the validation loss starts to level off around the 5th epoch  and shows minimal improvement after that, indicating that the model may start overfitting to the training data around this point.
+The training loss continues to decrease steadily throughout the training period, suggesting that the model is continuing to learn the specifics of the training data.  
+The gap between the training loss and the validation loss widens as the epochs progress.  
+This widening gap is a strong indicator of overfitting, where the model performs well on training data but does not generalize as well to unseen validation data.  
+
+
+To resolve this, we could add regularization methods or widen the search space of the hyper parameters, by increasing the possible dropout rates.  
+Using the validation dataset, we evaluate the best MLP model produced, which leads to the following results.  
+
+<br><br>
+<p align="center">
+  <img src="images/model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
+
+As we can see, this model achieves better performance that the first MLP model, since it effectively integrates the probability distribution from Model 1 with the enriched graph representations.  
+The enhanced feature set enables the model to capture more complex patterns and relationships, thereby providing a more comprehensive understanding and classification of the input data. 
 
 We could mention that:
 - We also developed and tested one MLP model (instead of 2) that integrates text
@@ -384,61 +476,78 @@ structural information. We ultimately decided to abandon this model, which
 combined truncated 100-dimensional text embeddings with 132 -based
 features, as its performance on the submission test was slightly lower compared to
 the alternative model.
-IMAGE
+
+<br><br>
+<p align="center">
+  <img src="images/graph-based_mlp_model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
+
 - Furthermore, we tested a Logistic Regression model using same features set. The
 model's performance improved significantly with these enhanced features
 compared to the benchmark Logistic Regression and achieves accuracy of 68%;
 however it remains worse than the MLP model 2.
-IMAGE
+
+<br><br>
+<p align="center">
+  <img src="images/logreg-based_mlp_model1_accuracy.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 ### Model 3: GCN using the output of Model 2 combined with graph representations
-As a final model, we decided to use a Graph Convolutional Neural Network (GCN) model,
-which is suitable for data similar to those used in this project, since they are a class of neural
-networks specifically designed to work with graph-structured data.
-More analytically, GCNs is a powerful technique for extracting and summarizing node
-information within a graph structure. It is derived from the convolution operation used in
-Convolutional Neural Networks (CNNs), which are commonly applied to image data.
-In GCNs we create features for each node, and we store them in a feature matrix for
-efficiency purposes. Like almost every Graph Deep Learning Architecture, the GCN also
-has two key processes: Message passing and Update. In GCNs, the message passing, and
-aggregation step involves aggregating features from neighboring nodes and the node itself
-(a weighted sum of the feature vectors of the neighbors). 
-To ensure appropriate scaling, we use a normalized adjacency matrix. The update rule combines the aggregated features with
-a learnable weight matrix and applies a non-linearity function.
+As a final model, we decided to use a Graph Convolutional Neural Network (GCN) model, which is suitable for data similar to those used in this project, since they are a class of neural networks specifically designed to work with graph-structured data.
+
+
+More analytically, GCNs is a powerful technique for extracting and summarizing node information within a graph structure. It is derived from the convolution operation used in Convolutional Neural Networks (CNNs), which are commonly applied to image data.  
+In GCNs we create features for each node, and we store them in a feature matrix for efficiency purposes. Like almost every Graph Deep Learning Architecture, the GCN also has two key processes: Message passing and Update.  
+In GCNs, the message passing, and aggregation step involves aggregating features from neighboring nodes and the node itself (a weighted sum of the feature vectors of the neighbors).  
+To ensure appropriate scaling, we use a normalized adjacency matrix. The update rule combines the aggregated features with a learnable weight matrix and applies a non-linearity function.
+
 
 The combination of these steps in multiple layers allows GCNs to effectively capture the
 structural information of the graph and learn meaningful node embeddings.
 
 
 More specifically, regarding the input features, we should note that since the entire graph is
-used as data, features should be created for all nodes. Therefore, for the nodes where we
-have data available, we utilize the probability vector of size (9,) which is produced from the
-Model 2 and the 128-dimensional vectors produced from the random walks using
-Word2Vec (as explained in the respective section). For the nodes where we do not have
-data, we generate 9 random values between 0 and 1, and also use the 128-dimensional
-vectors the random walks using the Word2Vec model. The use of those embeddings which
-contain Topological Context is a better alternative to the creation of random features. With
-our approach, the model has information even before the beginning of its training.
-The architecture of the GCN consists of two GCN layers followed by a fully connected layer.
-In the forward pass, the input features propagate through the first GCN layer, followed by a
-ReLU activation function and dropout for regularization. Then the output passes through the
-second GCN layer with similar activation and dropout. Finally, the output is fed into a linear
-layer to produce class scores, which are then passed through a log-softmax function to
-obtain output probabilities over classes. We train the model for 150 epochs. The hyper-
-parameters used to train the model are the following:
+used as data, features should be created for all nodes.  
+Therefore, for the nodes where we have data available, we utilize the probability vector of size **(9,)** which is produced from the Model 2 and the 128-dimensional vectors produced from the random walks using Word2Vec (as explained in the respective section).
 
-image
+For the nodes where we do not have data, we generate 9 random values between 0 and 1, and also use the 128-dimensional vectors the random walks using the Word2Vec model. The use of those embeddings which contain Topological Context is a better alternative to the creation of random features.
+
+With our approach, the model has information even before the beginning of its training.  
+The architecture of the GCN consists of two GCN layers followed by a fully connected layer.  
+In the forward pass, the input features propagate through the first GCN layer, followed by a
+ReLU activation function and dropout for regularization.  
+Then the output passes through the second GCN layer with similar activation and dropout.  
+Finally, the output is fed into a linear layer to produce class scores, which are then passed through a log-softmax function to
+obtain output probabilities over classes.  
+We train the model for 150 epochs. The hyper-parameters used to train the model are the following:
+
+
+<br><br>
+<p align="center">
+  <img src="images/parameters_table_gcn.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 The results can be seen below. The model achieves a train loss of 0.7550 and a validation
 loss of 0.9162. From the plot of train and validation loss, we can see that the issue of
 overfitting seems to be resolved or at least is less present.
 
-image
+<br><br>
+<p align="center">
+  <img src="images/model_loss_gcn_lineplot.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 Using the validation dataset, we evaluate the model produced, which leads to the following
 results. As we can see, this model achieves accuracy at 71% and a f1-score of 68%.
 
-image
+<br><br>
+<p align="center">
+  <img src="images/gcn_accuracy_report.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+</p>
+<br><br>
 
 We should notice that even though the accuracy is slightly less than the previous MLP
 model, the overfitting issue seems to be better in this model.
@@ -472,15 +581,19 @@ approach, combining the predicted probabilities with the graph-based features of
 # 4. Further Improvements
 For further improvements, several strategies could be explored to address observed
 limitations and enhance model performance.
+<br>
 ➢ Firstly, given the indications of overfitting observed in our models, implementing
 regularization techniques such as batch normalization layers in the MLP
 architectures could help mitigate this issue.
+<br>
 ➢ Additionally, to address discrepancies between validation and test losses,
 techniques such as cross-validation could be employed for fine-tuning, providing a
 more robust assessment of model performance across different data splits.
+<br>
 ➢ Moreover, to handle the imbalanced dataset, approaches like data augmentation or
 random sampling could be employed to ensure better representation of minority
 classes.
+<br>
 ➢ Exploring advanced feature engineering methods such as topic modeling to extract
 topic distributions from texts, instead of relying solely on text model’s predicted
 probability distributions, could enhance the model's ability to capture nuanced
