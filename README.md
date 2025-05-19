@@ -116,13 +116,17 @@ After computing this information, we study the nodes with the highest in-degree,
 degree and average neighbors’ degree per Class.
 
 
-![in degrees Image](images/in-degrees.png)
+<div style="text-align: center;">
+  <img src="images/in-degrees.png" width="70%" />
+</div>
 
+<div style="text-align: center;">
+  <img src="images/out-degrees.png" width="70%" />
+</div>
 
-![out degrees Image](images/out-degrees.png)
-
-
-![avg degrees Image](images/avg-degree.png)
+<div style="text-align: center;">
+  <img src="images/avg-degrees.png" width="70%" />
+</div>
 
 As we can see from the above, and especially from in-degrees and out-degrees results, there
 seem to be a clear theme for each Class. If we combine all of the above insights we can
