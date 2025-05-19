@@ -17,14 +17,14 @@
 
 
 ## 1. Project Scope 
-The goal of the project is to perform **Classification** on a collection of data that represent **Web Domains**.  
+The goal of the project is to perform **Classification** on a collection of data that represent Web Domains.  
 
 
-Specifically, the purpose is to apply **Machine Learning Techniques** in order to **Predict** which class represents each **Domain** most optimaly.  
+Specifically, the purpose is to apply **Machine Learning Techniques** in order to predict which Class represents each Domain most optimaly.  
 
 
-This task can be classified in the problem categories of **Text Classification** combined with **Node Classification**,  
-since the data not only contain **Textual Representation** of the websites but we also obtain a **Graph** of the domains based on the links between them, that contains the **Spacial Information**  of our dataset.  
+This task can be classified in the problem categories of Text Classification combined with Node Classification,  
+since the data not only contain **Textual Representation** of the websites but we also obtain a **Graph** of the domains based on the links between them.  
 
 
 ## 2. Data 
@@ -91,7 +91,7 @@ We can already detect a theme for each class, but we also print the **top words*
 most frequently in each class and have relatively large length, over 10 letters. 
 In the below image we can see indicatively some of them.
 
-![indicative_domains Image](images/indicative_words.png)
+![indicative_words Image](images/indicative_words.png)
 
 Following, we focus more on the graph information in our data. First of all, the graph of all  
 the domains consists of 65,208 nodes and 1,642,073 edges.
@@ -115,11 +115,14 @@ the domains consists of 65,208 nodes and 1,642,073 edges.
 After computing this information, we study the nodes with the highest in-degree, out-
 degree and average neighbors’ degree per Class.
 
-Image 4 : The domains per Class that have the highest in –degrees.
 
-Image 5 : The domains per Class that have the highest out – degrees
+![in degrees Image](images/in-degree.png)
 
-Image 6 : The domains per Class that have the highest average neighbors’ degrees.
+
+![out degrees Image](images/out-degree.png)
+
+
+![avg degrees Image](images/avg-degree.png)
 
 As we can see from the above, and especially from in-degrees and out-degrees results, there
 seem to be a clear theme for each Class. If we combine all of the above insights we can
