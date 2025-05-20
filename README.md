@@ -230,7 +230,7 @@ it outperforms other models (e.g. fast-text that was also used, did not result i
 performance).
 
 Specifically, since the textual representation of the domains is in the Greek language, we
-used a Sentence Transformer based on the Greek media Bert model^1. This model was
+used a Sentence Transformer based on the Greek media Bert model 1. This model was
 trained on a custom dataset containing triplets from the combined Greek “internet”, “social-
 media” and “press” domains. The dataset was created by sampling triplets of sentences
 from the same domain, where the first two sentences are more similar than the third one.
@@ -241,7 +241,8 @@ By utilizing this pre-trained model, each sentence is mapped to a 768 - dimensio
 vector space, which will be used as input to our classification models later.
 
 It should be noted, that besides this transformer, we tested another Bert based model,
-which is also trained in Greek texts^2. Specifically, we obtained the embeddings of the tokens
+which is also trained in Greek texts.  
+Specifically, we obtained the embeddings of the tokens
 of each sentence and produced the sentence embedding by averaging the tokens’
 embeddings. However, by comparing the performance of these embeddings with the
 embeddings produced from the Sentence Tokenizer on our baseline model (Simple Logistic
