@@ -377,7 +377,7 @@ validation loss of 1.0685:
 
 <br><br>
 <p align="center">
-  <img src="images/BIG_PIC.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/BIG_PIC.png" width="100%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -445,7 +445,7 @@ train loss of 0.2842 and a validation loss 0f 0.7445:
 
 <br><br>
 <p align="center">
-  <img src="images/BIG_PIC_model2.png" width="80%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/BIG_PIC_model2.png" width="100%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -512,12 +512,13 @@ More specifically, regarding the input features, we should note that since the e
 used as data, features should be created for all nodes.  
 Therefore, for the nodes where we have data available, we utilize the probability vector of size **(9,)** which is produced from the Model 2 and the 128-dimensional vectors produced from the random walks using Word2Vec (as explained in the respective section).
 
+
 For the nodes where we do not have data, we generate 9 random values between 0 and 1, and also use the 128-dimensional vectors the random walks using the Word2Vec model. The use of those embeddings which contain Topological Context is a better alternative to the creation of random features.
+
 
 With our approach, the model has information even before the beginning of its training.  
 The architecture of the GCN consists of two GCN layers followed by a fully connected layer.  
-In the forward pass, the input features propagate through the first GCN layer, followed by a
-ReLU activation function and dropout for regularization.  
+In the forward pass, the input features propagate through the first GCN layer, followed by a ReLU activation function and dropout for regularization.  
 Then the output passes through the second GCN layer with similar activation and dropout.  
 Finally, the output is fed into a linear layer to produce class scores, which are then passed through a log-softmax function to
 obtain output probabilities over classes.  
@@ -531,7 +532,8 @@ We train the model for 150 epochs. The hyper-parameters used to train the model 
 <br><br>
 
 The results can be seen below. The model achieves a train loss of 0.7550 and a validation
-loss of 0.9162. From the plot of train and validation loss, we can see that the issue of
+loss of 0.9162.  
+From the plot of train and validation loss, we can see that the issue of
 overfitting seems to be resolved or at least is less present.
 
 <br><br>
@@ -540,8 +542,8 @@ overfitting seems to be resolved or at least is less present.
 </p>
 <br><br>
 
-Using the validation dataset, we evaluate the model produced, which leads to the following
-results. As we can see, this model achieves accuracy at 71% and a f1-score of 68%.
+Using the validation dataset, we evaluate the model produced, which leads to the following results.  
+As we can see, this model achieves accuracy at 71% and a f1-score of 68%.
 
 <br><br>
 <p align="center">
@@ -549,10 +551,10 @@ results. As we can see, this model achieves accuracy at 71% and a f1-score of 68
 </p>
 <br><br>
 
-We should notice that even though the accuracy is slightly less than the previous MLP
-model, the overfitting issue seems to be better in this model.
-By utilizing the probability distributions produced from this model for the unknown test
-set, we achieve a Private loss of 0.9196 and a Public loss of 0.8620 on the Kaggle
+We should notice that even though the accuracy is slightly less than the previous MLP model, the overfitting issue seems to be better in this model.
+
+
+By utilizing the probability distributions produced from this model for the unknown test set, we achieve a Private loss of 0.9196 and a Public loss of 0.8620 on the Kaggle
 submission.
 
 
@@ -571,13 +573,17 @@ submission.
 ### • Feature Scaling:
 - For every feature set combination, we evaluated the model performance both with and without feature scaling to assess its impact on results.
 
-Best Model Identification based on the final leaderboard results
-After the private results were revealed on Kaggle post-competition, we observed that our
-best model achieved a score of 0.8735. However, this model was not selected for evaluation
-because its public score on a sample of the test set (0.9881) was lower than our best
+Best Model Identification based on the final leaderboard results.
+
+
+After the private results were revealed on Kaggle post-competition, we observed that our best model achieved a score of 0.8735. However, this model was not selected for evaluation because its public score on a sample of the test set (0.9881) was lower than our best
 submission's public score (0.8929).
+
+
 The best predictions were the output of the second MLP model, using the described
 approach, combining the predicted probabilities with the graph-based features of size (141,)
+
+
 # 4. Further Improvements
 For further improvements, several strategies could be explored to address observed
 limitations and enhance model performance.
@@ -597,7 +603,7 @@ classes.
 ➢ Exploring advanced feature engineering methods such as topic modeling to extract
 topic distributions from texts, instead of relying solely on text model’s predicted
 probability distributions, could enhance the model's ability to capture nuanced
-information.
+information. <br>
 ➢ Lastly, for improving graph-related features, incorporating additional measures such
 as PageRank or other centrality metrics could provide richer representations of node
 importance and connectivity within the graph structure.
