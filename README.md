@@ -130,21 +130,21 @@ degree and average neighbors’ degree per Class.
 
 <br><br>
 <p align="center">
-  <img src="images/in-degrees.png" width="35%" alt="The Domains Class with the Highest in-degrees."><br>
+  <img src="images/in-degrees.png" width="50%" alt="The Domains Class with the Highest in-degrees."><br>
   <span style="color: lightblue;">Image 4: The Domains Class with the Highest In-Degrees</span>
 </p>
 
 <br><br>
 
 <p align="center">
-  <img src="images/out-degrees.png" width="35%" alt="The Domains Class with the Highest out-degrees."><br>
+  <img src="images/out-degrees.png" width="50%" alt="The Domains Class with the Highest out-degrees."><br>
   <span style="color: lightblue;">Image 5: The Domains Class with the Highest Out-Degrees</span>
 </p>
 
 <br><br>
 
 <p align="center">
-  <img src="images/avg-degrees.png" width="35%" alt="The Domains Class with the Highest average degrees."><br>
+  <img src="images/avg-degrees.png" width="50%" alt="The Domains Class with the Highest average degrees."><br>
   <span style="color: lightblue;">Image 6: The Domains Class with the Highest Average Degrees</span>
 </p>
 
@@ -325,13 +325,13 @@ of 58% and a macro f1-score of 59%.
 
 <br><br>
 <p align="center">
-  <img src="images/benchmark_class_report.png" width="40%" alt="BENCHMARK CLASS REPORT"><br>
+  <img src="images/benchmark_class_report.png" width="50%" alt="BENCHMARK CLASS REPORT"><br>
 </p>
 <br><br>
 
 <br><br>
 <p align="center">
-  <img src="images/benchmark_conf_matrix.png" width="40%" alt="BENCHMARK CONF MATRIX"><br>
+  <img src="images/benchmark_conf_matrix.png" width="50%" alt="BENCHMARK CONF MATRIX"><br>
 </p>
 <br><br>
 
@@ -367,7 +367,7 @@ framework, where we define the max trials as 50:
 
 <br><br>
 <p align="center">
-  <img src="images/mlp_parameters.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/mlp_parameters.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -396,13 +396,13 @@ used as baseline, which was expected.
 
 <br><br>
 <p align="center">
-  <img src="images/conf_matrix_model1.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/conf_matrix_model1.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
 <br><br>
 <p align="center">
-  <img src="images/classification_report_model_1.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/classification_report_model_1.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -461,7 +461,7 @@ Using the validation dataset, we evaluate the best MLP model produced, which lea
 
 <br><br>
 <p align="center">
-  <img src="images/model1_accuracy.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/model1_accuracy.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -480,7 +480,7 @@ the alternative model.
 
 <br><br>
 <p align="center">
-  <img src="images/graph-based_mlp_model1_accuracy.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/graph-based_mlp_model1_accuracy.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
@@ -548,7 +548,7 @@ As we can see, this model achieves accuracy at 71% and a f1-score of 68%.
 
 <br><br>
 <p align="center">
-  <img src="images/gcn_accuracy_report.png" width="40%" alt="IMAGE MLP PARAMETERS"><br>
+  <img src="images/gcn_accuracy_report.png" width="50%" alt="IMAGE MLP PARAMETERS"><br>
 </p>
 <br><br>
 
